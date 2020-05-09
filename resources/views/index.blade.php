@@ -17,7 +17,7 @@
                 <span><i class="fa fa-facebook"></i></span>
                 <span><i class="fa fa-twitter"></i></span>
                 <span><i class="fa fa-instagram"></i></span>
-               <a href="logowanie.html"><span><i class="fa fa-sign-in-alt"></i></span></a>
+               <a href="/logowanie"><span><i class="fa fa-sign-in-alt"></i></span></a>
             </section>
         </nav>
     </header>
