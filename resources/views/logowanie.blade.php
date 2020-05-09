@@ -20,7 +20,7 @@
             <p>
                 <input type="password" placeholder="Hasło">
             </p>
-            <a href="register.html"><p id="register">
+            <a href="/register"><p id="register">
                 Nie masz konta? Zarejestruj się!
             </p></a>
             <p>
