@@ -21,7 +21,7 @@
                 <input type="password" placeholder="Hasło">
             </p>
             <a href="/register"><p id="register">
-                Nie masz konta? lol xd beka z cb Zarejestruj się!
+                Nie masz konta? Zarejestruj się!
             </p></a>
             <p>
                 <button>Zaloguj</button>
