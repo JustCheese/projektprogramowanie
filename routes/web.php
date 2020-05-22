@@ -25,6 +25,7 @@ Route::get('/register', function () {
 Route::get('/index', function () {
     return view('index');
 });
+Route::get('/panel', 'FilmController@panel')->middleware('verified');
 
 Auth::routes(['verify' => true]);
 
