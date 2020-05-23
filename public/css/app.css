@@ -10891,3 +10891,12 @@ a.text-dark:focus {
   }
 }
 
+#test{
+  color: #44E0E7;
+}
+.hov{
+  transition: all .2s ease-in-out; 
+}
+.hov:hover{ 
+transform: scale(1.1); 
+}
