@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = auth()->user();
+        $user = $user->id;
+        $wypoz = DB::table('wypozyczenie')
+            ->join('users', 'user_id', '=', 'id')
+            ->join('filmy', 'id_film', '=', 'film_id')
+            ->select('wypozyczenie.*', 'users.*', 'filmy.*')
+            ->where('id', $user)
+            ->where('oddane', FALSE)
+            ->get();
+        $date = date('Y-m-d');
+        return view('home', [
+            'wypoz'=> $wypoz, 
+            'date'=> $date,
+        ]);
     }
 }

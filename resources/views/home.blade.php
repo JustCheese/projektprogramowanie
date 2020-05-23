@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+@php 
+$suma = 0; 
+    foreach($wypoz as $date2){
+        if($date2->data_odd < $date) 
+            $suma+=1;
+    }
+if($suma) 
+    echo "<script type='text/javascript'>alert('Masz zaległe, nieoddane filmy! Sprawdź je w panelu użytkownika!');</script>";
+@endphp
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

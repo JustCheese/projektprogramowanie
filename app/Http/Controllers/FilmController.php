@@ -32,4 +32,16 @@ class FilmController extends Controller
             'date'=> $date,
         ]);
     }
+    public function ustawienia(){
+        $user = auth()->user();
+        $user = $user->id;
+        $now = NOW();
+        if(request('delete')){
+            $users = DB::table('users')
+                ->where('id', $user)
+                ->update(['deleted_at' => $now]);
+                return redirect('/');
+        }
+        return view('ustawienia');
+    }
 }

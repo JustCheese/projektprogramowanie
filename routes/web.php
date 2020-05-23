@@ -22,10 +22,8 @@ Route::get('/logowanie', function () {
 Route::get('/register', function () {
     return view('register');
 });
-Route::get('/index', function () {
-    return view('index');
-});
 Route::get('/panel', 'FilmController@panel')->middleware('verified');
+Route::get('/ustawienia', 'FilmController@ustawienia')->middleware('verified');
 
 Auth::routes(['verify' => true]);
 

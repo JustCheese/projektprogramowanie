@@ -16,6 +16,7 @@
          @if($date2->data_odd < $date) <br /> 
              {{ $date2->nazwa }} 
          @endif
-    @endforeach
+    @endforeach <br />
     
+    <a href="/ustawienia">Ustawienia</a>
 @endsection
