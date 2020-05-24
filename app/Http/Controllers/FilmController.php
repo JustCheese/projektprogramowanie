@@ -44,6 +44,7 @@ class FilmController extends Controller
             ->where('id', $use)
             ->get();
         $pass = $user->password;
+        $users = DB::table('users')->select('users.*')->get();
         $wypoz = DB::table('wypozyczenie')
             ->join('users', 'user_id', '=', 'id')
             ->join('filmy', 'id_film', '=', 'film_id')
@@ -85,20 +86,38 @@ class FilmController extends Controller
             } 
         }
         if(request('namee')){
-            $users = DB::table('users')
+            $sum = 0; 
+            foreach($users as $dat){
+            if($dat->name === request('name')){
+                $sum+=1;
+            } 
+            }
+            if($sum)
+                echo "<script type='text/javascript'>alert('Nazwa użytkownika już istnieje!');</script>";
+            else{
+                $users = DB::table('users')
                 ->where('id', $use)
                 ->update(['name' => request('name')]);
                 return redirect('/ustawienia');
+            }
         }
         if(request('email')){
-            $users = DB::table('users')
-                ->where('id', $use)
-                ->update(['email' => request('newm')]);
-                return redirect('/ustawienia');
+            $su = 0; 
+            foreach($users as $dat){
+            if($dat->email === request('newm')){
+                $su+=1;
+            } 
+            }
+            if($su) 
+                echo "<script type='text/javascript'>alert('Taki email już istnieje!');</script>";
+            else{
+                $users = DB::table('users')
+                    ->where('id', $use)
+                    ->update(['email' => request('newm')]);
+                    return redirect('/ustawienia');
+            }
         }
-        if(mysqli_error){
-            echo "Makaron";
-        }
+        
         return view('ustawienia');
             
     }
