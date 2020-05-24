@@ -24,7 +24,7 @@ Route::get('/register', function () {
 });
 Route::get('/panel', 'FilmController@panel')->middleware('verified');
 Route::get('/ustawienia', 'FilmController@ustawienia')->middleware('verified');
-
+Route::post('/ustawienia', 'FilmController@zmiany')->middleware('verified');
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
