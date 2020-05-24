@@ -17,6 +17,9 @@ class Filmy extends Migration
             $table->id('id_film');
             $table->text('nazwa');
             $table->text('opis');
+            $table->text('reżyser');
+            $table->text('gatunek');
+            $table->timestamp('created_at')->nullable();
         });
     }
 
