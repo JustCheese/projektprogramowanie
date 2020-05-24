@@ -36,11 +36,29 @@ class FilmController extends Controller
         $user = auth()->user();
         $user = $user->id;
         $now = NOW();
+        $wypoz = DB::table('wypozyczenie')
+            ->join('users', 'user_id', '=', 'id')
+            ->join('filmy', 'id_film', '=', 'film_id')
+            ->select('wypozyczenie.*', 'users.*', 'filmy.*')
+            ->where('id', $user)
+            ->where('oddane', FALSE)
+            ->get();
+        $date = date('Y-m-d');
         if(request('delete')){
-            $users = DB::table('users')
+            $suma = 0; 
+            foreach($wypoz as $date2){
+            if($date2->data_odd < $date) 
+                $suma+=1;
+            }
+            if($suma){
+                echo "<script type='text/javascript'>alert('Nie możesz usunąć konta, ponieważ masz nieoddane fimy!');</script>";
+            }
+            else{
+                $users = DB::table('users')
                 ->where('id', $user)
                 ->update(['deleted_at' => $now]);
                 return redirect('/');
+            } 
         }
         return view('ustawienia');
     }
