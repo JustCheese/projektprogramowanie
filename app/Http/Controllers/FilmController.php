@@ -84,6 +84,21 @@ class FilmController extends Controller
                 return redirect('/');
             } 
         }
+        if(request('namee')){
+            $users = DB::table('users')
+                ->where('id', $use)
+                ->update(['name' => request('name')]);
+                return redirect('/ustawienia');
+        }
+        if(request('email')){
+            $users = DB::table('users')
+                ->where('id', $use)
+                ->update(['email' => request('newm')]);
+                return redirect('/ustawienia');
+        }
+        if(mysqli_error){
+            echo "Makaron";
+        }
         return view('ustawienia');
             
     }
