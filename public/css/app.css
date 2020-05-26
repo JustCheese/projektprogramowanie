@@ -10910,3 +10910,29 @@ transform: scale(1.1);
   margin: 0 auto !important;
 }
 
+.sr{
+  text-align: center;
+  margin-top: 25px;
+}
+.dl{
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+  height: calc(1.6em + 0.75rem + 2px);
+  margin-bottom: 10px;
+}
+.dl2{
+  width: 222px;
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+  height: calc(1.6em + 0.75rem + 2px);
+  margin-bottom: 10px;
+}
+.btt{
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+  height: calc(1.2em + 0.75rem + 2px);
+}
+.btt:hover{
+  background-color: #44E0E7;
+  border: 1px solid #44E0E7;
+}
