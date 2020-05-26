@@ -10894,9 +10894,19 @@ a.text-dark:focus {
 #test{
   color: #44E0E7;
 }
-.hov{
-  transition: all .2s ease-in-out; 
-}
-.hov:hover{ 
+
+.animeimg:hover{ 
 transform: scale(1.1); 
 }
+
+.animeimg{
+  width: 200px;
+  height: 300px;
+  transition: all .2s ease-in-out; 
+  margin-bottom: 15px;
+}
+
+#imgnow{
+  margin: 0 auto !important;
+}
+

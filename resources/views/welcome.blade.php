@@ -88,7 +88,7 @@
                     <a href="">Nowości</a>
                     <a href="">Zapowiedzi</a>
                     <a href="">Kontakt</a>
-                    <a href="">Baza filmów</a>
+                    <a href="/baza">Baza filmów</a>
                 </div>
             </div>
         </div>
