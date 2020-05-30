@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 Use \Carbon\Carbon;
-
 use Illuminate\Http\Request;
+use App\Film;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -120,5 +120,22 @@ class FilmController extends Controller
         
         return view('ustawienia');
             
+    }
+    public function baza(){
+        $filmy = Film::all();
+        return view('baza', [
+            'filmy'=> $filmy, 
+        ]);
+    }
+    public function show($id){
+        $film = Film::findOrFail($id);
+        $suma = 0;
+        if($user = auth()->user()){
+            $suma+=1;
+        }
+        return view('film', [
+            'film'=> $film,
+            'suma'=> $suma,
+        ]);
     }
 }
