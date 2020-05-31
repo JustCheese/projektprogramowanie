@@ -155,7 +155,7 @@ class FilmController extends Controller
             $wyp->film_id = $id; 
             $wyp->user_id = $use;
             $wyp->data_wyp = NOW();
-            $wyp->data_odd = NOW();
+            $wyp->data_odd = date('Y-m-d', strtotime(NOW(). ' +30 days'));
             $wyp->oddane = FALSE;
             foreach($wypozyczenia as $w){
                 if($w->film_id == $id && $w->user_id == $use && $w->oddane == FALSE){
