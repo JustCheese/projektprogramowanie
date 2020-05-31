@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 Use \Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Film;
+use App\Wypozyczenia;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -138,4 +139,41 @@ class FilmController extends Controller
             'suma'=> $suma,
         ]);
     }
+    public function wypozycz($id){
+        $film = Film::findOrFail($id);
+        $user = auth()->user();
+        $use = $user->id;
+        $sum = 0;
+        $suma = 0;
+        if($user = auth()->user()){
+            $suma+=1;
+        }
+        $wypozyczenia = Wypozyczenia::all();
+        if(request('wypozycz')){
+            $wyp = new Wypozyczenia();
+            $wyp->id_wypozyczenie = NULL;
+            $wyp->film_id = $id; 
+            $wyp->user_id = $use;
+            $wyp->data_wyp = NOW();
+            $wyp->data_odd = NOW();
+            $wyp->oddane = FALSE;
+            foreach($wypozyczenia as $w){
+                if($w->film_id == $id && $w->user_id == $use && $w->oddane == FALSE){
+                    $sum+=1;
+                }
+            }
+            if($sum){
+                echo "<script type='text/javascript'>alert('Już masz ten film wypożyczony!');</script>";  
+            }
+            else{
+                $wyp->save();
+                return redirect('/panel');
+            }
+            return view('film', [
+                'film'=> $film,
+                'suma'=> $suma,
+            ]);
+         }
+    }
+    
 }

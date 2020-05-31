@@ -26,6 +26,7 @@ Route::get('/baza', 'FilmController@baza');
 Route::get('/panel', 'FilmController@panel')->middleware('verified');
 Route::get('/ustawienia', 'FilmController@ustawienia')->middleware('verified');
 Route::post('/ustawienia', 'FilmController@zmiany')->middleware('verified');
+Route::post('/baza/{id}', 'FilmController@wypozycz')->middleware('verified');
 Route::get('/baza/{id}', 'FilmController@show');
 Auth::routes(['verify' => true]);
 
