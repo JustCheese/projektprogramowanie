@@ -22,6 +22,9 @@ Route::get('/logowanie', function () {
 Route::get('/register', function () {
     return view('register');
 });
+Route::get('/kontakt', function () {
+    return view('kontakt');
+});
 Route::get('/baza', 'FilmController@baza');
 Route::get('/panel', 'FilmController@panel')->middleware('verified');
 Route::get('/ustawienia', 'FilmController@ustawienia')->middleware('verified');

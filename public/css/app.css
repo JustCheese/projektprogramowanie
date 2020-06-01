@@ -10905,7 +10905,13 @@ transform: scale(1.1);
   transition: all .2s ease-in-out; 
   margin-bottom: 15px;
 }
-
+.animeimg2{
+  width: 200px;
+  height: 300px;
+  transition: all .2s ease-in-out; 
+  margin-bottom: 15px;
+  margin-right: 15px;
+}
 #imgnow{
   margin: 0 auto !important;
 }
@@ -10935,4 +10941,7 @@ transform: scale(1.1);
 .btt:hover{
   background-color: #44E0E7;
   border: 1px solid #44E0E7;
+}
+.blue{
+  color: rgb(68, 224, 231);
 }
