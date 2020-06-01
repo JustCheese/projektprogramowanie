@@ -175,5 +175,15 @@ class FilmController extends Controller
             ]);
          }
     }
+    public function oddaj(Request $request){
+        $oddaj = DB::table('wypozyczenie')->select('wypozyczenie.*')->get();
+        $name = $request->input('hidden');
+        if(request('oddaj')){
+            $oddaj = DB::table('wypozyczenie')
+                ->where('id_wypozyczenie', $name)
+                ->update(['oddane' => TRUE]);
+                return redirect('/panel');
+        }
+    }
     
 }

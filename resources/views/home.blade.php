@@ -23,13 +23,20 @@ if($suma)
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    Pomyślnie zalogowano!
                 </div>
             </div>
         </div>
     </div><br /><br />
-        <h1>Najnowsze filmy anime<h1>
-    
-    </div>
+        <div class="container">
+        <h1 style="text-align: center;">Najnowsze filmy anime<h1>
+            <div class="row">
+            @foreach($latest as $latest)
+                <div class="col-xs-12 input-position text-center col-sm-6 col-lg-3 col-xl-3" id="{{$latest->id_film}}">
+                    <a href="/baza/{{$latest->id_film}}"><img class="animeimg" src="img/{{$latest->id_film}}.jpg"></a>
+                </div>
+            @endforeach
+            <div>
+        </div>
+        </div>
 @endsection
+

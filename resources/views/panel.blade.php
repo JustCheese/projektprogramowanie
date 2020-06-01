@@ -3,7 +3,12 @@
     <div class="container">
     <span class="blue"><h3>Wypożyczone:</h3></span> <br />
     @foreach($wypoz as $wyp)
-        {{ $wyp->nazwa }} <br /> 
+        {{ $wyp->nazwa }}  
+        <form action="/panel" method="POST">
+            @csrf
+            <input type="hidden" name="hidden" value="{{ $wyp->id_wypozyczenie }}">
+            <input type="submit" name="oddaj" value="Oddaj film">
+        </form><br />
     @endforeach
 
     <span class="blue"><h3>Oddane:</h3></span> <br />

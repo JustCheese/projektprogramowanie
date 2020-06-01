@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Film;
 
 class HomeController extends Controller
 {
@@ -34,9 +35,12 @@ class HomeController extends Controller
             ->where('oddane', FALSE)
             ->get();
         $date = date('Y-m-d');
+        $latest = Film::orderBy('id_film', 'desc')->take(4)->get();
         return view('home', [
             'wypoz'=> $wypoz, 
             'date'=> $date,
+            'latest'=> $latest,
         ]);
     }
+    
 }

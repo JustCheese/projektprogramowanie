@@ -27,6 +27,7 @@ Route::get('/kontakt', function () {
 });
 Route::get('/baza', 'FilmController@baza');
 Route::get('/panel', 'FilmController@panel')->middleware('verified');
+Route::post('/panel', 'FilmController@oddaj')->middleware('verified');
 Route::get('/ustawienia', 'FilmController@ustawienia')->middleware('verified');
 Route::post('/ustawienia', 'FilmController@zmiany')->middleware('verified');
 Route::post('/baza/{id}', 'FilmController@wypozycz')->middleware('verified');
