@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Film;
+use App\Wypozyczenia;
 
 class HomeController extends Controller
 {
@@ -36,10 +37,16 @@ class HomeController extends Controller
             ->get();
         $date = date('Y-m-d');
         $latest = Film::orderBy('id_film', 'desc')->take(4)->get();
+        $most = Wypozyczenia::select(Wypozyczenia::raw('film_id, count(*)'))
+            ->groupBy('film_id')
+            ->orderBy('count(*)', 'desc')
+            ->take(4)
+            ->get();
         return view('home', [
             'wypoz'=> $wypoz, 
             'date'=> $date,
             'latest'=> $latest,
+            'most'=> $most,
         ]);
     }
     

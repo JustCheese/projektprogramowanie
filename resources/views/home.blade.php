@@ -28,7 +28,7 @@ if($suma)
         </div>
     </div><br /><br />
         <div class="container">
-        <h1 style="text-align: center;">Najnowsze filmy anime</h1>
+        <h1 style="text-align: center;">Ostatnio dodane:</h1>
             <div class="row">
             @foreach($latest as $latest)
                 <div class="col-xs-12 input-position text-center col-sm-6 col-lg-3 col-xl-3" id="{{$latest->id_film}}">
@@ -37,7 +37,19 @@ if($suma)
             @endforeach
             <div>
         </div>
+    </div>
+    </div><br /><br />
+        <div class="container">
+        <h1 style="text-align: center;">Najczęściej wypożyczane:</h1>
+            <div class="row">
+            @foreach($most as $most)
+                <div class="col-xs-12 input-position text-center col-sm-6 col-lg-3 col-xl-3" id="{{$most->film_id}}">
+                    <a href="/baza/{{$most->film_id}}"><img class="animeimg" src="img/{{$most->film_id}}.jpg"></a>
+                </div>
+            @endforeach
+            <div>
         </div>
+    </div>
         <a href="/baza"><h1 class="baza">BAZA DOSTEPNYCH FILMÓW</h1></a>
 @endsection
 

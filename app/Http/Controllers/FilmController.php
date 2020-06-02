@@ -64,11 +64,11 @@ class FilmController extends Controller
                     return redirect('/ustawienia');
                 }
                 else{
-                    echo "Hasła nie są takie same!";
+                    echo "<script type='text/javascript'>alert('Hasła nie są takie same!');</script>";
                 }
             }
             else{
-                echo "Wpisz poprawne hasło!";
+                echo "<script type='text/javascript'>alert('Wpisz poprawne hasło!');</script>";
             }
         }
         if(request('delete')){
