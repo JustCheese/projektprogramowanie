@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-<img class="animeimg2" src="/img/{{$film->id_film}}.jpg" style="float: left"><br />
+<img class="animeimg2 imgonsite" src="/img/{{$film->id_film}}.jpg"><br />
         <h1 style="color: rgb(68, 224, 231); margin-bottom: -25px;">{{ $film->nazwa }}</h1> <br />
         
         {{ $film->opis }}

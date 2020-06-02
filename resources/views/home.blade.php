@@ -28,7 +28,7 @@ if($suma)
         </div>
     </div><br /><br />
         <div class="container">
-        <h1 style="text-align: center;">Najnowsze filmy anime<h1>
+        <h1 style="text-align: center;">Najnowsze filmy anime</h1>
             <div class="row">
             @foreach($latest as $latest)
                 <div class="col-xs-12 input-position text-center col-sm-6 col-lg-3 col-xl-3" id="{{$latest->id_film}}">
@@ -38,5 +38,6 @@ if($suma)
             <div>
         </div>
         </div>
+        <a href="/baza"><h1 class="baza">BAZA DOSTEPNYCH FILMÓW</h1></a>
 @endsection
 

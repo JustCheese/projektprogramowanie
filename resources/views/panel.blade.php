@@ -23,6 +23,6 @@
          @endif
     @endforeach <br />
     
-    <a href="/ustawienia" style="float: right;">Ustawienia</a>
+    <a href="/ustawienia"><input style="float: right;" type="submit" name="wypozycz" value="Ustawienia" class="btt"></a>
     </div>
 @endsection
