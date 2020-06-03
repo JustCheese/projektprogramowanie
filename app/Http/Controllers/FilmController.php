@@ -124,8 +124,21 @@ class FilmController extends Controller
     }
     public function baza(){
         $filmy = Film::all();
+        $search = 0;
+        $name = request('name');
+        if(request('search')){
+            $search = Film::where('nazwa', 'LIKE', "%{$name}%")
+                ->orWhere('reżyser', 'LIKE', "%{$name}%")
+                ->orWhere('gatunek', 'LIKE', "%{$name}%")
+                ->orWhere('rok_premiery', 'LIKE', "%{$name}%")
+                ->get();
+            return view('baza', [
+                'search'=> $search, 
+            ]);
+        }
         return view('baza', [
             'filmy'=> $filmy, 
+            'search'=> $search,
         ]);
     }
     public function show($id){
