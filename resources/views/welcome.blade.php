@@ -85,8 +85,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="">Nowości</a>
-                    <a href="">Zapowiedzi</a>
+                    <a href="/nowosci">Nowości</a>
+                    <a href="/zapowiedzi">Zapowiedzi</a>
                     <a href="/kontakt">Kontakt</a>
                     <a href="/baza">Baza filmów</a>
                 </div>

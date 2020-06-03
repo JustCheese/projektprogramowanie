@@ -25,6 +25,12 @@ Route::get('/register', function () {
 Route::get('/kontakt', function () {
     return view('kontakt');
 });
+Route::get('/nowosci', function () {
+    return view('nowosci');
+});
+Route::get('/zapowiedzi', function () {
+    return view('zapowiedzi');
+});
 Route::get('/baza', 'FilmController@baza');
 Route::get('/panel', 'FilmController@panel')->middleware('verified');
 Route::post('/panel', 'FilmController@oddaj')->middleware('verified');

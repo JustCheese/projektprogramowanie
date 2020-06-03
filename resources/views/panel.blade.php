@@ -7,7 +7,7 @@
         <form action="/panel" method="POST">
             @csrf
             <input type="hidden" name="hidden" value="{{ $wyp->id_wypozyczenie }}">
-            <input type="submit" name="oddaj" value="Oddaj film">
+            <input class="btt" type="submit" name="oddaj" value="Oddaj film">
         </form><br />
     @endforeach
 
