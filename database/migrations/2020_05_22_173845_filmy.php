@@ -19,7 +19,7 @@ class Filmy extends Migration
             $table->text('opis');
             $table->text('reżyser');
             $table->text('gatunek');
-            $table->int('rok_premiery');
+            $table->integer('rok_premiery');
         });
     }
 
