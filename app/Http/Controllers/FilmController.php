@@ -125,13 +125,16 @@ class FilmController extends Controller
     public function baza(){
         $filmy = Film::all();
         $search = 0;
-        $name = request('name');
+        $name = explode(" ", request('name'));
         if(request('search')){
-            $search = Film::where('nazwa', 'LIKE', "%{$name}%")
-                ->orWhere('reżyser', 'LIKE', "%{$name}%")
-                ->orWhere('gatunek', 'LIKE', "%{$name}%")
-                ->orWhere('rok_premiery', 'LIKE', "%{$name}%")
-                ->get();
+            $search = Film::Where(function($query) use($name){
+                for($i = 0; $i < count($name); $i++){
+                    $query->orwhere('reżyser', 'like',  '%'. $name[$i] .'%')
+                        ->orwhere('nazwa', 'like',  '%'. $name[$i] .'%')
+                        ->orwhere('gatunek', 'like',  '%'. $name[$i] .'%')
+                        ->orwhere('rok_premiery', 'like',  '%'. $name[$i] .'%');
+                }      
+            })->get();  
             return view('baza', [
                 'search'=> $search, 
             ]);
