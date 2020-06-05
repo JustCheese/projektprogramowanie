@@ -2,10 +2,10 @@
 @section('content')
     <div class="container">
     <h1 style="text-align: center;">BAZA FILMÓW<h1>
-    <form action="/baza" method="POST">
+    <form class="sr2" action="/baza" method="POST">
         @csrf
-        <input type="text" name="name" required>
-        <input type="submit" name="search">
+        <input class="wyszukiwarka" placeholder="Wyszukaj" type="text" name="name" required>
+        <input class="fa btt2 wyszsub" type="submit" name="search" value="&#xf002">
     </form>
     @if($search)
     <div class="row">
@@ -26,4 +26,5 @@
     <div>
     @endif
     </div>
+    <script src="https://kit.fontawesome.com/5c2fca66e1.js" crossorigin="anonymous"></script>
 @endsection

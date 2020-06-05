@@ -6,5 +6,6 @@
         <b>Email:</b> dvdeurovhs@gmail.com<br />
         <b>Numer telefonu:</b> 123456789
         </span>
+        <i class="fas fa-thumbs-up fa-5x"></i>
     </div>
 @endsection

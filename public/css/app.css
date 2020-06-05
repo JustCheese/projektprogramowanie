@@ -10921,6 +10921,10 @@ transform: scale(1.1);
   text-align: center;
   margin-top: 25px;
 }
+.sr2{
+  text-align: center;
+  margin-bottom: 15px;
+}
 .dl{
   border-radius: 0.25rem;
   border: 1px solid #ced4da;
@@ -10967,4 +10971,31 @@ transform: scale(1.1);
 }
 .baza:hover{
   transform: scale(1.1); 
+}
+
+.wyszukiwarka{
+  width: 240px;
+  height: 30px;
+  font-size: 15px;
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 1px #091924;
+}
+
+.wyszsub{
+  height: 30px;
+  font-size: 15px;
+}
+.btt2{
+  border-radius: 50%;
+  border: 1px solid #FE6A5D;
+  height: 50px;
+  width: 50px;
+  transition: all .2s ease-in-out;
+  font-weight: bold;
+  background-color: #FE6A5D;
+}
+.btt2:hover{
+  background-color: #44E0E7;
+  border: 1px solid #44E0E7;
 }
