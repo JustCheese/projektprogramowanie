@@ -31,7 +31,7 @@ if($suma)
         <h1 style="text-align: center;">Ostatnio dodane:</h1>
             <div class="row">
                 <div class="col-xs-12 input-position text-center col-sm-6 col-lg-3 col-xl-3">
-                    <a href="https://www.youtube.com/watch?v=55-mHgUjZfY" target="_blank"><img class="animeimg" src="img/31.jpg"></a>
+                    <a href="https://www.youtube.com/watch?v=55-mHgUjZfY" target="_blank"><img class="animeimg" src="img/26.jpg"></a>
                 </div>
             @foreach($latest as $latest)
                 <div class="col-xs-12 input-position text-center col-sm-6 col-lg-3 col-xl-3" id="{{$latest->id_film}}">
