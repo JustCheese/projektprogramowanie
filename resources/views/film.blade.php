@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
+<div class="container"><br /><br />
 <img class="animeimg2 imgonsite" src="/img/{{$film->id_film}}.jpg"><br />
-        <h1 style="color: rgb(68, 224, 231); margin-bottom: -25px;">{{ $film->nazwa }}</h1> <br />
+        <h1 class="blue" style="margin-bottom: -25px;">{{ $film->nazwa }}</h1> <br />
         
-        Opis: {{ $film->opis }}<br />
-        Gatunek: {{ $film->gatunek }}<br />
-        Reżyser: {{ $film->reżyser }}<br />
-        Rok premiery: {{ $film->rok_premiery }}<br />
+        <span class="blue2">Opis:</span> {{ $film->opis }}<br />
+        <span class="blue2">Gatunek:</span> {{ $film->gatunek }}<br />
+        <span class="blue2">Reżyser:</span> {{ $film->reżyser }}<br />
+        <span class="blue2">Rok premiery:</span> {{ $film->rok_premiery }}<br />
         
         @if ($suma)
             <form action="/baza/{{$film->id_film}}" method="POST">

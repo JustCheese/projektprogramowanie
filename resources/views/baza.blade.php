@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container"><br /><br/>
     <h1 style="text-align: center;">BAZA FILMÓW<h1>
     <form class="sr2" action="/baza" method="POST">
         @csrf
