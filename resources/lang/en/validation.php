@@ -87,13 +87,13 @@ return [
     'min' => [
         'numeric' => 'The :attribute must be at least :min.',
         'file' => 'The :attribute must be at least :min kilobytes.',
-        'string' => 'The :attribute must be at least :min characters.',
+        'string' => 'Hasło musi mieć co najmniej 8 znaków.',
         'array' => 'The :attribute must have at least :min items.',
     ],
     'not_in' => 'The selected :attribute is invalid.',
     'not_regex' => 'The :attribute format is invalid.',
     'numeric' => 'The :attribute must be a number.',
-    'password' => 'The password is incorrect.',
+    'password' => 'Nieprawidłowe hasło.',
     'present' => 'The :attribute field must be present.',
     'regex' => 'The :attribute format is invalid.',
     'required' => 'The :attribute field is required.',
@@ -132,6 +132,15 @@ return [
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
+        ],
+        'name' => [
+            'unique' => 'Ta nazwa użytkownika jest już zajęta.',
+        ],
+        'email' => [
+            'unique' => 'Ten email jest już zajęty.',
+        ],
+        'password' => [
+            'confirmed' => 'Hasła nie są takie same.',
         ],
     ],
 
