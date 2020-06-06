@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container"><br /><br/>
     <span class="blue"><h3>Wypożyczone:</h3></span> <br />
     @foreach($wypoz as $wyp)
         {{ $wyp->nazwa }}  
