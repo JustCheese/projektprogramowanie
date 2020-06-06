@@ -64,11 +64,13 @@ class FilmController extends Controller
                     return redirect('/ustawienia');
                 }
                 else{
-                    echo "<script type='text/javascript'>alert('Hasła nie są takie same!');</script>";
+                    $sumka3 = 1;
+                    return view('/ustawienia', compact('sumka3'));;
                 }
             }
             else{
-                echo "<script type='text/javascript'>alert('Wpisz poprawne hasło!');</script>";
+                $sumka5 = 1;
+                return view('/ustawienia', compact('sumka5'));;
             }
         }
         if(request('delete')){
@@ -77,7 +79,8 @@ class FilmController extends Controller
                 $suma+=1;
             }
             if($suma){
-                echo "<script type='text/javascript'>alert('Nie możesz usunąć konta, ponieważ masz nieoddane fimy!');</script>";
+                $sumka4 = $suma;
+                return view('/ustawienia', compact('sumka4'));
             }  
             else{
                 $users = DB::table('users')
@@ -93,8 +96,10 @@ class FilmController extends Controller
                 $sum+=1;
             } 
             }
-            if($sum)
-                echo "<script type='text/javascript'>alert('Nazwa użytkownika już istnieje!');</script>";
+            if($sum){
+                $sumka1 = $sum;
+                return view('/ustawienia', compact('sumka1'));
+            }  
             else{
                 $users = DB::table('users')
                 ->where('id', $use)
@@ -109,8 +114,10 @@ class FilmController extends Controller
                 $su+=1;
             } 
             }
-            if($su) 
-                echo "<script type='text/javascript'>alert('Taki email już istnieje!');</script>";
+            if($su){
+                $sumka2 = $su;
+                return view('/ustawienia', compact('sumka2'));
+            } 
             else{
                 $users = DB::table('users')
                     ->where('id', $use)

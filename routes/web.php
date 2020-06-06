@@ -31,6 +31,7 @@ Route::get('/nowosci', function () {
 Route::get('/zapowiedzi', function () {
     return view('zapowiedzi');
 });
+Route::redirect('/baza/26', 'https://www.youtube.com/watch?v=55-mHgUjZfY');
 Route::get('/baza', 'FilmController@baza');
 Route::post('/baza', 'FilmController@baza');
 Route::get('/panel', 'FilmController@panel')->middleware('verified');
