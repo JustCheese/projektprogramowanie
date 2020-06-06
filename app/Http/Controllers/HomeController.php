@@ -37,7 +37,7 @@ class HomeController extends Controller
             ->get();
         $date = date('Y-m-d');
         $latest = Film::orderBy('id_film', 'desc')->take(3)->get();
-        $most = Wypozyczenia::select(Wypozyczenia::raw('film_id, count(*)'))
+        $most = Wypozyczenia::selectRaw('film_id, count(*)')
             ->groupBy('film_id')
             ->orderBy('count(*)', 'desc')
             ->take(4)

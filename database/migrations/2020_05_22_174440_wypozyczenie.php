@@ -14,7 +14,7 @@ class Wypozyczenie extends Migration
     public function up()
     {
         Schema::create('wypozyczenie', function (Blueprint $table) {
-            $table->id('id_wypozyczenie');
+            $table->bigIncrements('id_wypozyczenie');
             $table->integer('film_id');
             $table->integer('user_id');
             $table->date('data_wyp');

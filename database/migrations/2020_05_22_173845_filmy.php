@@ -14,7 +14,7 @@ class Filmy extends Migration
     public function up()
     {
         Schema::create('filmy', function (Blueprint $table) {
-            $table->id('id_film');
+            $table->bigIncrements('id_film');
             $table->text('nazwa');
             $table->text('opis');
             $table->text('reżyser');

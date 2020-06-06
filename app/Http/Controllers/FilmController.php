@@ -208,5 +208,4 @@ class FilmController extends Controller
                 return redirect('/panel');
         }
     }
-    
 }
