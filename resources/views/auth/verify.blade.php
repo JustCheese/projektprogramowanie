@@ -16,7 +16,7 @@
 
                     Przed kontynuacją sprawdź swój E-Mail, wysłaliśmy tam link weryfikacyjny.
                     Jeśli nie dostałeś E-Maila,
-                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                    <form class="d-inline" method="GET" action="{{ route('verification.resend') }}">
                         @csrf
                         <button type="submit" class="btn btn-link p-0 m-0 align-baseline">kliknij tutaj, aby wysłać nowy.</button>.
                     </form>
